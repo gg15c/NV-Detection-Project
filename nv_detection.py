@@ -13,7 +13,7 @@ output_pin1 = 32 #GPIO number
 output_pin2 = 33 
 
 
-def main():
+def main(): #define a PWM function to control GPIO
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(output_pin1, GPIO.OUT, initial=GPIO.HIGH)
 	p1 = GPIO.PWM(output_pin1, 50)
@@ -98,8 +98,8 @@ while display.IsOpen():
 		print(net.GetClassDesc(detection.ClassID)) # this will give you a ture index by mapping the number.
 		print(detection.ClassID) # this will only give a classID number.
 		
-		if detection.ClassID == 1:
-			main()
+		#if detection.ClassID == 1:
+		main()
 
 	# render the image
 	display.RenderOnce(img, width, height)
