@@ -1,2 +1,4 @@
 # NV-Detection-Project
-A device could identify the object
+Introcution:
+
+A device could identify the object. We use jetons nano to implement the detection function. 
