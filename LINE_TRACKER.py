@@ -4,7 +4,7 @@ import time
 GPIO.setmode(GPIO.BOARD) #set GPIO board on the jetson nano
  
 # Declaration of the input pin which is connected with the sensor
-GPIO_PIN = 15
+GPIO_PIN = 15 # setting the number of GPIO
 GPIO.setup(GPIO_PIN, GPIO.IN)
  
 # Break between the results will be defined here (in seconds)
@@ -25,5 +25,5 @@ try:
             time.sleep(delayTime)
  
 finally:
-	GPIO.cleanup() # if you press ctrl+c, the system will jump to finally to clean up the register.
+	GPIO.cleanup() # If you press ctrl+c, the system will jump to finally to clean up the register.
 
