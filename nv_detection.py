@@ -98,7 +98,8 @@ while display.IsOpen():
 	for detection in detections:
 		print(net.GetClassDesc(detection.ClassID)) # this will give you a ture index by mapping the number.
 		print(detection.ClassID) # this will only give a classID number.
-		
+		print(detection)
+	
 		#if detection.ClassID == 1:
 		main()
 
