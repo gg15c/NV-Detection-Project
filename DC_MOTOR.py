@@ -14,7 +14,7 @@ PWM2 = 33
 # set pin numbers to the board's
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PWM1, GPIO.OUT, initial=GPIO.HIGH)
-p1 = GPIO.PWM(PWM1, 50)
+p1 = GPIO.PWM(PWM1, 50) # the 50 = 50 Hz.
 GPIO.setup(PWM2, GPIO.OUT, initial=GPIO.HIGH)
 p2 = GPIO.PWM(PWM2, 50)
 
@@ -24,7 +24,7 @@ GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
-p1.start(10)
+p1.start(10) # the 10 equals the duty cycle
 p2.start(100)
 
 # Stop
