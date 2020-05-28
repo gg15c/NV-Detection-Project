@@ -24,7 +24,7 @@ GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
-p1.start(10) # the 10 equals the duty cycle
+p1.start(50) # the 10 equals the duty cycle
 p2.start(100)
 
 # Stop
