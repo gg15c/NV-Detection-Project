@@ -10,50 +10,83 @@ import RPi.GPIO as GPIO
 import time
 
 
-output_pin1 = 32 #GPIO number
-output_pin2 = 33 
+# for 1st Motor on the board
+
+# this is right wheel
+IN1 = 37
+IN2 = 35
+PWM1 = 32
+
+# this is left wheel
+IN3 = 31
+IN4 = 29
+PWM2 = 33
 
 
 def main(): #define a PWM function to control GPIO
-	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(output_pin1, GPIO.OUT, initial=GPIO.HIGH)
-	p1 = GPIO.PWM(output_pin1, 50)
-	GPIO.setup(output_pin2, GPIO.OUT, initial=GPIO.HIGH)
-	p2 = GPIO.PWM(output_pin2, 50)
+	
+	if detection.ClassID == 1:
+		# set pin numbers to the board's
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setup(PWM1, GPIO.OUT, initial=GPIO.HIGH)
+		p1 = GPIO.PWM(PWM1, 50) # the 50 = 50 Hz.
+		GPIO.setup(PWM2, GPIO.OUT, initial=GPIO.HIGH)
+		p2 = GPIO.PWM(PWM2, 50)
 
-	print("PWM running. Press CTRL+C to exit.")
-	try:
-		if detection.ClassID == 1:
-			#p1.start(2.5)
-			#print("p1 start at 2.5%")
-			#time.sleep(1)
-			p2.start(2.5)
-			print("p2 start at 2.5%")
-			time.sleep(0.25)
-			#p1.start(7.25)
-			#print("p1 start at 7.25%")
-			#time.sleep(1)
-			#p2.start(7.25)
-			#print("p2 start at 7.25%")
-			#time.sleep(0.5)
-			#p1.start(12)
-			#print("p1 start at 12%")
-			#time.sleep(1)
-			p2.start(12)
-			print("p2 start at 12%")
-			time.sleep(0.25)
-			#p1.start(7.25)
-			#print("p1 start at 7.25%")
-			#time.sleep(1)
-			#p2.start(2.5)
-			#print("p2 start at 2.5%")
-			#time.sleep(1)
 
-	finally:
-		p1.stop()
-		p2.stop()
+		# initialize 
+		GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
+		GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
+		GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
+		GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
+		p1.start(5) # the 10 equals the duty cycle
+		p2.start(5)
+
+		# Stop
+		#GPIO.output(IN3, GPIO.HIGH)
+		#GPIO.output(IN1, GPIO.LOW)
+		#GPIO.output(IN2, GPIO.LOW)
+		#time.sleep(1)
+
+		# Forward
+		GPIO.output(IN1, GPIO.HIGH)
+		GPIO.output(IN2, GPIO.LOW)
+		GPIO.output(IN3, GPIO.LOW)
+		GPIO.output(IN4, GPIO.HIGH)
+		time.sleep(5)
+
+		# Stop
+		GPIO.output(IN1, GPIO.LOW)
+		GPIO.output(IN2, GPIO.LOW)
+		GPIO.output(IN3, GPIO.LOW)
+		GPIO.output(IN4, GPIO.LOW)
+		time.sleep(1)
+
+		# Backward
+		#GPIO.output(IN1, GPIO.LOW)
+		#GPIO.output(IN2, GPIO.HIGH)
+		#GPIO.output(IN3, GPIO.HIGH)
+		#GPIO.output(IN4, GPIO.LOW)
+		#time.sleep(5)
+
+
+		#turn left
+		#GPIO.output(IN1, GPIO.LOW)
+		#GPIO.output(IN2, GPIO.HIGH)
+		#GPIO.output(IN3, GPIO.HIGH)
+		#GPIO.output(IN4, GPIO.LOW)
+		#time.sleep(3)
+
+
+		# Stop
+		GPIO.output(IN1, GPIO.LOW)
+		GPIO.output(IN2, GPIO.LOW)
+		GPIO.output(IN3, GPIO.LOW)
+		GPIO.output(IN4, GPIO.LOW)
+		time.sleep(1)
+
+
 		GPIO.cleanup()
-
 
 
 

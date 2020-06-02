@@ -3,12 +3,16 @@
 import RPi.GPIO as GPIO
 import time
 
-# for 1st Motor on ENA
+# for 1st Motor on the board
+
+# this is right wheel
 IN1 = 37
 IN2 = 35
+PWM1 = 32
+
+# this is left wheel
 IN3 = 31
 IN4 = 29
-PWM1 = 32
 PWM2 = 33
 
 # set pin numbers to the board's
@@ -24,8 +28,8 @@ GPIO.setup(IN4, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN3, GPIO.OUT, initial=GPIO.LOW)
-p1.start(50) # the 10 equals the duty cycle
-p2.start(100)
+p1.start(5) # the 10 equals the duty cycle
+p2.start(5)
 
 # Stop
 #GPIO.output(IN3, GPIO.HIGH)
@@ -38,25 +42,22 @@ GPIO.output(IN1, GPIO.HIGH)
 GPIO.output(IN2, GPIO.LOW)
 GPIO.output(IN3, GPIO.LOW)
 GPIO.output(IN4, GPIO.HIGH)
-time.sleep(3)
+time.sleep(5)
 
 # Stop
-#GPIO.output(IN1, GPIO.LOW)
-#GPIO.output(IN2, GPIO.LOW)
-#GPIO.output(IN3, GPIO.LOW)
-#GPIO.output(IN4, GPIO.LOW)
-#time.sleep(1)
+GPIO.output(IN1, GPIO.LOW)
+GPIO.output(IN2, GPIO.LOW)
+GPIO.output(IN3, GPIO.LOW)
+GPIO.output(IN4, GPIO.LOW)
+time.sleep(1)
 
 # Backward
 #GPIO.output(IN1, GPIO.LOW)
 #GPIO.output(IN2, GPIO.HIGH)
-#time.sleep(1)
+#GPIO.output(IN3, GPIO.HIGH)
+#GPIO.output(IN4, GPIO.LOW)
+#time.sleep(5)
 
-# Stop
-#GPIO.output(ENA, GPIO.LOW)
-#GPIO.output(IN1, GPIO.LOW)
-#GPIO.output(IN2, GPIO.LOW)
-#time.sleep(1)
 
 #turn left
 #GPIO.output(IN1, GPIO.LOW)
