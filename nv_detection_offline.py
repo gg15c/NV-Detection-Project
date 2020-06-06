@@ -118,7 +118,7 @@ camera = jetson.utils.gstCamera(opt.width, opt.height, opt.camera)
 #display = jetson.utils.glDisplay()
 
 # process frames until user exits
-while display.IsOpen():
+while True:
 	# capture the image
 	img, width, height = camera.CaptureRGBA()
 
@@ -137,10 +137,10 @@ while display.IsOpen():
 		main()
 
 	# render the image
-	display.RenderOnce(img, width, height)
+	#display.RenderOnce(img, width, height)
 
 	# update the title bar
-	display.SetTitle("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
+	#display.SetTitle("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
 
 	# print out performance info
 	net.PrintProfilerTimes()
