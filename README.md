@@ -1,9 +1,17 @@
-# NV-Detection-Project
-Introcution:
+# A car with dection fucntion
 
-A device could identify the object. We use jetons nano to implement the detection function. 
+## Introduction
+
+A device could identify the object. We use jetson nano to implement the detection function. 
 
 This project is still under progressing, but it is fun.
 
-for test
+
+## Block Diagram
+
+Under construction...
+
+
+## Demo
+
 

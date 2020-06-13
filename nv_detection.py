@@ -115,7 +115,7 @@ net = jetson.inference.detectNet(opt.network, sys.argv, opt.threshold)
 
 # create the camera and display
 camera = jetson.utils.gstCamera(opt.width, opt.height, opt.camera)
-#display = jetson.utils.glDisplay()
+display = jetson.utils.glDisplay()
 
 # process frames until user exits
 while display.IsOpen():
@@ -134,7 +134,7 @@ while display.IsOpen():
 		print(detection)
 	
 		#if detection.ClassID == 1:
-		main()
+		#main()
 
 	# render the image
 	display.RenderOnce(img, width, height)
@@ -143,4 +143,4 @@ while display.IsOpen():
 	display.SetTitle("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
 
 	# print out performance info
-	net.PrintProfilerTimes()
+	#net.PrintProfilerTimes()
