@@ -22,5 +22,5 @@ This project is still under progressing, but it is fun.
 <img src="https://github.com/gg15c/NV-Detection-Project/blob/master/Img/IMG_3050%202.jpg">
 
 ## Reference
-[1] https://github.com/dusty-nv/jetson-inference
-[2] https://qiita.com/kitazaki/items/a445994f1f46a1b15f78
+* https://github.com/dusty-nv/jetson-inference
+* https://qiita.com/kitazaki/items/a445994f1f46a1b15f78
