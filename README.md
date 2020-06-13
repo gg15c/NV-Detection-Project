@@ -7,10 +7,15 @@ A device could identify the object. We use jetson nano to implement the detectio
 This project is still under progressing, but it is fun.
 
 
-## Block Diagram
+##  Component list
 
-Under construction...
+* Jetson nano *1
+* DC motor *2
+* Power bank *1
+* TB6612FNG *1
+* C270 logitech (USB CAM) *1
 
+##  Block Diagram
 
 ## Demo
 
