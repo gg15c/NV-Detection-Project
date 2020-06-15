@@ -17,6 +17,9 @@ This project is still under progressing, but it is fun.
 
 ##  Block Diagram
 
+<img src="https://github.com/gg15c/NV-Detection-Project/blob/master/Img/BLOCK_Diagram.png">
+
+
 ## Demo
 
 <img src="https://github.com/gg15c/NV-Detection-Project/blob/master/Img/IMG_3050%202.jpg">
