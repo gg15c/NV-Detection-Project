@@ -4,7 +4,7 @@
 
 A device could identify the object. We use jetson nano to implement the detection function. 
 
-This project is still under progressing, but it is fun.
+The car can detect the person, and execute the wheel moving forward. 
 
 
 ##  Component list
